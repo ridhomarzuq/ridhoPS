@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+  <menuitem
+    id="ridhops_menu_root"
+    name="Ridho Sewa PS"
+    sequence="10"/>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="ridhops_datamaster_menu_categ" 
+    name="Inventaris" 
+    parent="ridhops_menu_root" 
+    sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="ridhops_datamaster_menu_categ" 
+    name="Operasional" 
+    parent="ridhops_menu_root" 
+    sequence="10"/>
+
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="ridhops_datamaster_menu_categ" 
+    name="Operasional" 
+    parent="ridhops_menu_root" 
+    sequence="20"/>      
+    
+    <!-- This Menu Item Must have a parent -->
+    <menuitem id="ridhops_contact_menu_categ" 
+    name="Data Contact" 
+    parent="ridhops_menu_root" 
+    sequence="30"/>
+
+    </data>
+</odoo>
