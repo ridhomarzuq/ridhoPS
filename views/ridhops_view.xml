@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- model.name tree view -->
+    <record id="ridhops_jenisps_view_tree" model="ir.ui.view">
+        <field name="name">ridhops.jenisps.view.tree</field>
+        <field name="model">ridhops.jenisps</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="tipe"/>
+                <field name="perawatan_id"/>
+                <field name="kapasitas"/>
+                <field name="teknik"/>
+                <field name="harga"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+    <!-- model.name form view -->
+    <record id="ridhops_jenisps_view_form" model="ir.ui.view">
+        <field name="name">ridhops.jenisps.view.form</field>
+        <field name="model">ridhops.jenisps</field>
+        <field name="arch" type="xml">
+            <form string="Daftar Harga Sewa">
+                <sheet>
+                <group>
+                    <group colspan='4'>
+                    <group colspan='2'>
+                    <separator string="Rincian Sewa"/>
+                    <field name="name"/>
+                    <field name="kapasitas"/>
+                    </group>
+                    <group colspan='2'>
+                        <separator string="Tipe PS"/>
+                        <field name="tipe"/>
+                        <field name="perawatan_id"/>  
+                    </group>
+                    <notebook colspan='4'>
+                        <page string="Harga sewa">
+                        <field name="harga"/>
+                        </page>
+                        <page string="Deskripsi service">
+                            <field name="deskripsi" />
+                        </page>
+                    </notebook>
+                    </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- model.name search view -->
+    <record id="ridhops_jenisps_view_search" model="ir.ui.view">
+        <field name="name">ridhops.jenisps.view.search</field>
+        <field name="model">ridhops.jenisps</field>
+        <field name="arch" type="xml">
+            <search string="Filter">
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="tipe"/>
+                <filter name="2" string="2" domain="[('tipe', 'ilike', '2')]"/>
+                <filter name="4" string="4" domain="[('tipe', 'ilike', '4')]"/>
+                
+            </search>
+        </field>
+    </record>
+    <!-- model.name action window -->
+    <record id="ridhops_jenisps_action" model="ir.actions.act_window">
+        <field name="name">Jenis PS Ridho</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ridhops.jenisps</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_smilling_face">
+                Diisi dengan daftar tipe atau jenis PS
+            </p><p>
+                <!-- More details about what a user can do with this object will be OK --> 
+            </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="ridhops_jenisps_menu_act" 
+    name="Jenis PS" 
+    parent="ridhops_datamaster_menu_categ" 
+    action="ridhops_jenisps_action" 
+    sequence="10"/>
+    <!-- This Menu Item must have a parent and an action -->
+  </data>
+</odoo>

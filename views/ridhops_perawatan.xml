@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- model.name tree view -->
+    <record id="ridhops_service_view_tree" model="ir.ui.view">
+        <field name="name">ridhops.service.view.tree</field>
+        <field name="model">ridhops.service</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="nama"/>
+                <field name="teknik"/>
+                <field name="hasil"/>
+                <field name="tersedia"/>
+                <field name="deskripsi"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- model.name form view -->
+    <record id="ridhops_service_view_form" model="ir.ui.view">
+        <field name="name">ridhops.service.view.form</field>
+        <field name="model">ridhops.service</field>
+        <field name="arch" type="xml">
+            <form string="Daftar Pemeliharaan PS">
+                <sheet>
+                    <group>
+                        <group colspan='4'>
+                        <group colspan='2'>
+                        <separator string="Rincian Service"/>
+                        <field name="nama"/>
+                        <field name="teknik"/>
+                        </group>
+                        <group colspan='2'>
+                        <separator string='Hasil Service'/>
+                        <field name="hasil"/>
+                        <field name="tersedia"/>
+                        </group>
+                        <notebook>
+                            <page string="Deskripsi service">
+                            <field name="deskripsi"/>
+                            </page>
+                            <page string="Deskripsi PS">
+                                <field name="models_id" />
+                            </page>
+                        </notebook>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- model.name action window -->
+  <record id="ridhops_service_action" model="ir.actions.act_window">
+    <field name="name">Jenis PS ridho Ps</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">ridhops.service</field>
+    <field name="view_mode">tree,form</field>    
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_smiling_face">
+        Diisi dengan service PS
+      </p><p>
+        <!-- More details about what a user can do with this object will be OK --> 
+      </p>
+    </field>
+  </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="ridhops_service_menu_act" 
+        name="Perawatan" 
+        parent="ridhops_datamaster_menu_categ" 
+        action="ridhops_service_action" 
+        sequence="10"/>
+    </data>
+</odoo>
