@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_ridhops_jenisps,access.ridhops.jenisps,model_ridhops_jenisps,,1,1,1,1
 access_ridhops_service,access.ridhops.service,model_ridhops_service,,1,1,1,1
+access_ridhops_jenisps,access.ridhops.jenisps,model_ridhops_jenisps,,1,1,1,1
+access_ridhops_orderps,access.ridhops.orderps,model_ridhops_orderps,,1,1,1,1
