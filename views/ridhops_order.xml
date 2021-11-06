@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!-- ridhops.orederps tree view -->
+    <record id="ridhops_orderps_view_tree" model="ir.ui.view">
+        <field name="name">ridhops.orderps.view.tree</field>
+        <field name="model">ridhops.orderps</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name" />
+                <field name="pemesan_id" />
+                <field name="tanggal_pesan" />
+            </tree>
+        </field>
+    </record>
+    <!-- ridhops.orderps form view -->
+    <record id="ridhops_orderps_view_form" model="ir.ui.view">
+        <field name="name">ridhops.orderps.view.form</field>
+        <field name="model">ridhops.orderps</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                    </group>
+                    <group>
+                        <field name="pemesan_id" />
+                    </group>
+                    <group>
+                        <field name="tanggal_pesan" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- ridhops.orderps action window -->
+    <record id="ridhops_orderps_action" model="ir.actions.act_window">
+        <field name="name">Orderan RidhoPS</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ridhops.orderps</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="ridhops_orderps_menu_act" 
+    name="Order PS" 
+    parent="ridhops_menu_root" 
+    action="ridhops_orderps_action" 
+    sequence="5"/>
+    
+    </data>
+</odoo>
