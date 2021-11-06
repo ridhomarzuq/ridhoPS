@@ -29,7 +29,8 @@
         'views/templates.xml',
         'views/ridhops.xml',
         'views/ridhops_perawatan.xml',
-        'views/ridhops_pegawai.xml'
+        'views/ridhops_pegawai.xml',
+        'views/ridhops_order.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
